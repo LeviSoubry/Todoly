@@ -1,0 +1,101 @@
+{
+  "name": "todoly",
+  "displayName": "Todoly",
+  "publisher": "levisoubry",
+  "description": "A simple TODO sidebar with tags for VS Code",
+  "icon": "media/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/levisoubry/todoly"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "todoly.toggleTodo",
+        "title": "Toggle"
+      },
+      {
+        "command": "todoly.openTodo",
+        "title": " 👉 Open"
+      },
+      {
+        "command": "todoly.deleteTodo",
+        "title": "🗑️"
+      },
+      {
+        "command": "todoly.deleteCompleted",
+        "title": "Clean Up"
+      }
+    ],
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "todoly.openTodo",
+          "when": "view == todoList && viewItem == todoTask",
+          "group": "navigation"
+        },
+        {
+          "command": "todoly.deleteTodo",
+          "when": "view == todoList && viewItem == todoTask",
+          "group": "inline"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "todoly.deleteCompleted",
+          "when": "view == todoList",
+          "group": "navigation"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "todoSidebar",
+          "title": "TODOs",
+          "icon": "media/todo.svg"
+        }
+      ]
+    },
+    "views": {
+      "todoSidebar": [
+        {
+          "id": "todoList",
+          "name": "Workspace TODOs",
+          "icon": "media/todo.svg"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.107.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.48.1",
+    "eslint": "^9.39.1",
+    "esbuild": "^0.27.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
