@@ -1,15 +1,15 @@
 {
   "name": "todoly",
-  "displayName": "Todoly",
+  "displayName": "Todoly | To Do List",
   "publisher": "levisoubry",
-  "description": "A simple TODO sidebar with tags for VS Code",
+  "description": "The newest TODO sidebar with tags for VS Code",
   "icon": "media/logo.png",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/levisoubry/todoly"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.107.0"
   },
