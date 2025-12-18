@@ -4,6 +4,7 @@
   "publisher": "levisoubry",
   "description": "A simple TODO sidebar with tags for VS Code",
   "icon": "media/logo.png",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/levisoubry/todoly"

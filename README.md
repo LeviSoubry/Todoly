@@ -27,8 +27,16 @@ Tags create folders in the sidebar.
 Multiple tags create nested folders.
 
 ## Actions
-**Toggle TODO** — mark task as done / undone
+Most extensions are very susppicious or not very clear about what they do. Watch here how the experience looks like and how clean it is.
 
-**Delete task** — remove a TODO comment
+### Toggle TODO — mark task as done / undone
+---
+![Example Toggling](media/toggle-example.gif)
 
-**Clean up** — delete all completed tasks
+### Delete task — remove a TODO comment
+---
+![Example Delete](media/delete-example.gif)
+
+### Clean up — delete all completed tasks
+---
+![Example CleanUp](media/toggle-example.gif)
