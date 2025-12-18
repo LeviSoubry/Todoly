@@ -39,4 +39,4 @@ Most extensions are very susppicious or not very clear about what they do. Watch
 
 ### Clean up — delete all completed tasks
 ---
-![Example CleanUp](media/toggle-example.gif)
+![Example CleanUp](media/cleanup-example.gif)
